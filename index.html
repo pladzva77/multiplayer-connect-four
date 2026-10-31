@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect Four — Multiplayer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>🔴 Connect Four 🟡</h1>
+    <p class="tagline">Online multiplayer — create a room, share the code, play.</p>
+
+    <!-- Lobby -->
+    <section id="lobby" class="card">
+      <label for="nameInput">Your name</label>
+      <input id="nameInput" type="text" maxlength="16" placeholder="e.g. Tendai" />
+
+      <button id="createBtn" class="primary">Create a room</button>
+
+      <div class="divider"><span>or join a room</span></div>
+
+      <div class="joinRow">
+        <input id="codeInput" type="text" maxlength="4" placeholder="CODE" class="code" />
+        <button id="joinBtn">Join</button>
+      </div>
+
+      <div class="divider"><span>or</span></div>
+
+      <button id="localBtn">Play local 2-player (same device)</button>
+
+      <p id="lobbyError" class="error" hidden></p>
+    </section>
+
+    <!-- Game -->
+    <section id="game" class="card" hidden>
+      <div class="gameTop">
+        <div id="roomInfo" class="roomInfo"></div>
+        <button id="leaveBtn" class="small">Leave</button>
+      </div>
+
+      <div id="players" class="players"></div>
+      <p id="status" class="status"></p>
+
+      <div id="board" class="board" aria-label="Connect Four board"></div>
+
+      <div class="controls">
+        <button id="rematchBtn" class="primary" hidden>Rematch</button>
+      </div>
+
+      <div id="chatBox" class="chat">
+        <h2>Room chat</h2>
+        <div id="chatMessages" class="chatMessages"></div>
+        <div class="chatRow">
+          <input id="chatInput" type="text" maxlength="200" placeholder="Say something…" />
+          <button id="chatSend">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>
